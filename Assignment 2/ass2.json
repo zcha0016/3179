@@ -2,49 +2,31 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "width": 500,
   "height": 300,
-  "layer": [
-    {
-      "data": {
-        "url": "https://raw.githubusercontent.com/zcha0016/3179/main/Assignment%202/Local_Authority_Districts_Dec_2016.json",
-        "format": {
-          "type": "topojson",
-          "feature": "Local_Authority_Districts_Dec_2016"
-        }
-      },
-      "projection": {
-        "type": "equalEarth"
-      },
-      "mark": "geoshape"
-    },
-    {
-      "data": {
-        "url": "https://media.githubusercontent.com/media/zcha0016/3179/main/Assignment%202/accidents_2013_to_2014.csv"
-      },
-      "transform": [
-        {
-          "aggregate": [
-            {
-              "op": "count",
-              "as": "loa"
-            }
-          ],
-          "groupby": [
-            "Local_Authority_(Highway)"
-          ]
-        }
-      ],
-      "mark": {
-        "type": "geoshape"
-      },
-      "encoding": {
-        "color": {
-          "field": "loa",
-          "type": "quantitative",
-          "scale": {
-            "type": "log"
-          }
-        }
-      }
+  "data": {
+    "url": "https://raw.githubusercontent.com/zcha0016/3179/main/Assignment%202/Local_Authority_Districts_Dec_2016.json",
+    "format": {
+      "type": "topojson",
+      "feature": "Local_Authority_Districts_Dec_2016"
     }
-  ]
+  },
+  "projection": {
+    "type": "mercator"
+  },
+  "mark": "geoshape",
+  "transform": [
+    {
+      "aggregate": [{
+       "op": "count",
+       "as": "acc_count"
+      }],
+      "groupby": ["Local_Authority_(Highway)"]
+    }
+  ],
+  "encoding": {
+    "color": {
+    "field": "acc_count",
+    "type": "quantitative",
+    "scale": {"type": "log"}
+    }
+  } 
 }
