@@ -1,0 +1,38 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width": 1000,
+    "height": 500,
+    "data": {
+      "url": "https://raw.githubusercontent.com/zcha0016/3179/main/Assignment%202/tr-cities.json",
+      "format": {"type": "topojson", "feature": "tr-cities"}
+    },
+    "transform": [
+      {
+        "lookup": "properties.name",
+        "from": {
+          "data": {
+            "url": "https://raw.githubusercontent.com/zcha0016/3179/main/Assignment%202/dataset_csv.csv"
+          },
+          "key": "CITY",
+          "fields": ["_TOTAL", "POPULATION"]
+        }
+      },
+      {"calculate": "datum._TOTAL/datum.POPULATION * 10000", "as": "Confirmed per 10,000 population"}
+    ],
+    "projection": {"type": "equalEarth"},
+    "mark": {"type": "geoshape"},
+    
+    "encoding": {
+      "color": {
+        "field": "Confirmed per 10,000 population",
+        "type": "quantitative",
+        "scale" : {
+          "scheme" : "oranges"
+        }
+    },
+   "tooltip": [
+        {"field": "properties.name", "type": "nominal", "title": "City"},
+        {"field": "_TOTAL", "type": "quantitative", "title" : "Total Vaccinations"}
+      ]
+    }
+  }
