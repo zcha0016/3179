@@ -1,0 +1,11 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width": 500,
+    "height": 300,
+    "data": {
+      "url": "https://raw.githubusercontent.com/zcha0016/3179/main/Assignment%202/Local_Authority_Districts_Dec_2016.json",
+      "format": {"type": "topojson", "feature": "Local_Authority_Districts_Dec_2016"}
+    },
+    "projection": {"type": "equalEarth"},
+    "mark": "geoshape"
+  }
