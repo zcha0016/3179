@@ -4,10 +4,9 @@
   "data": {
     "url": "https://raw.githubusercontent.com/zcha0016/3179/main/data/Covid19-Turkey.csv"
   },
-  "height": 300,
+  "height": "container",
   "vconcat": [
     {
-      "width" : 1000,
       "mark": {
         "type": "area",
         "line": {
@@ -52,7 +51,6 @@
       }
     },
     {
-      "width": 1000,
       "height": 60,
       "layer": [
         {
