@@ -52,6 +52,7 @@
       }
     },
     {
+      "width": "container",
       "height": 60,
       "layer": [
         {
