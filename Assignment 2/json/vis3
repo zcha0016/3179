@@ -1,124 +1,106 @@
 {
-    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "width": 1000,
-    "data": {
-      "url": "https://raw.githubusercontent.com/zcha0016/3179/main/Assignment%202/data/Covid19-Turkey.csv"
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 1000,
+  "data": {
+    "url": "https://raw.githubusercontent.com/zcha0016/3179/main/Assignment%202/data/Covid19-Turkey.csv"
+  },
+  "width": 500,
+  "height": 300,
+  "vconcat": [
+    {
+      "width": 500,
+      "mark": {
+        "type": "area",
+        "line": {
+          "color": "#ff3800"
+        },
+        "color": {
+          "x1": 1,
+          "y1": 1,
+          "x2": 1,
+          "y2": 0,
+          "gradient": "linear",
+          "stops": [
+            {
+              "offset": 0,
+              "color": "white"
+            },
+            {
+              "offset": 1,
+              "color": "#ff6500"
+            }
+          ]
+        }
+      },
+      "encoding": {
+        "x": {
+          "field": "Date",
+          "type": "temporal",
+          "scale": {
+            "domain": {
+              "selection": "brush",
+              "encoding": "x"
+            }
+          },
+          "axis": {
+            "title": ""
+          }
+        },
+        "y": {
+          "field": "Daily Cases",
+          "type": "quantitative"
+        }
+      }
     },
-    "hconcat": [
-      {
-        "width": 500,
-        "height": 300,
-        "vconcat": [
-          {
-            "width": 500,
-            "mark": {
-              "type": "area",
-              "line": {"color": "#ff3800"},
-              "color": {
-                "x1": 1,
-                "y1": 1,
-                "x2": 1,
-                "y2": 0,
-                "gradient": "linear",
-                "stops": [
-                  {"offset": 0, "color": "white"},
-                  {"offset": 1, "color": "#ff6500"}
+    {
+      "width": 500,
+      "height": 60,
+      "layer": [
+        {
+          "params": [
+            {
+              "name": "brush",
+              "select": {
+                "type": "interval",
+                "encodings": [
+                  "x"
                 ]
               }
-            },
-            "encoding": {
-              "x": {
-                "field": "Date",
-                "type": "temporal",
-                "scale": {"domain": {"selection": "brush", "encoding": "x"}},
-                "axis": {"title": ""}
-              },
-              "y": {"field": "Daily Cases", "type": "quantitative"}
             }
-          },
-          {
-            "width": 500,
-            "height": 60,
-            "layer": [
-              {
-                "params": [
-                  {
-                    "name": "brush",
-                    "select": {"type": "interval", "encodings": ["x"]}
-                  }
-                ],
-                "mark": {"type": "area", "color": "#ff6500"}
-              },
-              {
-                "transform": [{"filter": {"param": "brush"}}],
-                "mark": {"type": "area", "color": "#ff8700"}
-              }
-            ],
-            "encoding": {
-              "x": {"field": "Date", "type": "temporal"},
-              "y": {
-                "field": "Daily Cases",
-                "type": "quantitative",
-                "axis": {"tickCount": 3, "grid": false}
+          ],
+          "mark": {
+            "type": "area",
+            "color": "#ff6500"
+          }
+        },
+        {
+          "transform": [
+            {
+              "filter": {
+                "param": "brush"
               }
             }
+          ],
+          "mark": {
+            "type": "area",
+            "color": "#ff8700"
           }
-        ]
-      },
-      {
-        "width": 500,
-        "height": 300,
-        "transform": [
-          {"fold": ["Total Cases", "Total Deaths", "Total Recovered"]}
-        ],
-        "layer": [
-          {
-            "encoding": {
-              "x": {"field": "Date", "type": "temporal"},
-              "y": {"field": "value", "type": "quantitative", "title" : "Count"},
-              "color": {"field": "key", "type": "nominal", "title" : "Legend"}
-            },
-            "layer": [
-              {"mark": "line"},
-              {
-                "selection": {
-                  "tooltip": {
-                    "type": "single",
-                    "nearest": true,
-                    "on": "mouseover",
-                    "encodings": ["x"],
-                    "empty": "none"
-                  }
-                },
-                "mark": "point",
-                "encoding": {
-                  "opacity": {
-                    "condition": {"selection": "tooltip", "value": 1},
-                    "value": 0
-                  }
-                }
-              }
-            ]
-          },
-          {
-            "transform": [{"filter": {"selection": "tooltip"}}],
-            "layer": [
-              {
-                "mark": {"type": "rule", "color": "gray"},
-                "encoding": {"x": {"type": "temporal", "field": "Date"}}
-              },
-              {
-                "mark": {"type": "text", "align": "left", "dx": 5, "dy": -5},
-                "encoding": {
-                  "text": {"type": "quantitative", "field": "value"},
-                  "color": {"type": "nominal", "field": "key"},
-                  "x": {"type": "temporal", "field": "Date"},
-                  "y": {"type": "quantitative", "field": "value"}
-                }
-              }
-            ]
+        }
+      ],
+      "encoding": {
+        "x": {
+          "field": "Date",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Daily Cases",
+          "type": "quantitative",
+          "axis": {
+            "tickCount": 3,
+            "grid": false
           }
-        ]
+        }
       }
-    ]
-  }
+    }
+  ]
+}
