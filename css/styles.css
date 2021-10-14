@@ -1,11 +1,16 @@
-{
-    font-family : 'Source Sans Pro', sans-serif;
-  }
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;800;900&display=swap');
   h1{
+    font-family: 'Montserrat';
+    font-size: 60px;
     font-weight: 900;
   }
+  h1:first-line { 
+    font-size: 50px;
+    font-weight: 400; 
+  } 
    body{
-     background-color: #C5CED9;
+     background-color: #f5cbcb;
+     font-family: 'Montserrat';
    }
    .page{
      width: 900px;   
