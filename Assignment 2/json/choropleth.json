@@ -1,6 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "width": 1000,
+  "width": "container",
   "height": 500,
   "data": {
     "url": "https://raw.githubusercontent.com/zcha0016/3179/main/Assignment%202/json/tr-cities.json",
