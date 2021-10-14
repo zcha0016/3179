@@ -7,7 +7,7 @@
   "height": 300,
   "vconcat": [
     {
-      "width" : "container",
+      "width" : 1000,
       "mark": {
         "type": "area",
         "line": {
@@ -52,7 +52,7 @@
       }
     },
     {
-      "width": "container",
+      "width": 1000,
       "height": 60,
       "layer": [
         {
