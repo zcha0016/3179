@@ -4,6 +4,11 @@
 <head>
   <title>Flight Statistics</title>
 
+  <!-- Import Vega & Vega-Lite (does not have to be from CDN) -->
+  <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
+
   <!-- Import pure.css -->
   <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/pure-min.css"
     integrity="sha384-cg6SkqEOCV1NbJoCu11+bm0NvBRc8IYLRGXkmNrqUBfTjmMYwNKPWBTIKyw9mHNJ" crossorigin="anonymous">
@@ -26,7 +31,8 @@
     <div class="pure-g">
       <div class="pure-u-1-1">
         <h1 style="font-size: 80px;color: #df4a4a;text-align: center; font-weight: 900;">COVID-19 IN<br />TURKEY</h1>
-        <h4 style="font-size: 18px; font-family: Montserrat; font-weight: 500; text-align: center;">A brief infographic on Turkey's COVID-19 statistics over the past 2 years</h4>
+        <h4 style="font-size: 18px; font-family: Montserrat; font-weight: 500; text-align: center;">A brief infographic
+          on Turkey's COVID-19 statistics over the past 2 years</h4>
       </div>
     </div>
     <!-- end pure grid group -->
