@@ -1,6 +1,6 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "width": 500,
+    "width": "container",
     "data": {
       "url": "https://raw.githubusercontent.com/zcha0016/3179/main/data/Covid19-Turkey.csv"
     },

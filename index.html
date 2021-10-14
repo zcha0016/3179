@@ -28,7 +28,7 @@
   <div class="page">
 
     <!-- pure grid group -->
-    <div class="pure-g">
+    <div class="pure-g", style="margin-bottom: 25px;">
       <div class="pure-u-1-1">
         <h1 style="font-size: 80px;color: #df4a4a;text-align: center; font-weight: 900;">COVID-19 IN<br />TURKEY</h1>
         <h4 style="font-size: 18px; font-family: Montserrat; font-weight: 500; text-align: center;">A brief infographic
@@ -38,6 +38,61 @@
     <!-- end pure grid group -->
 
     <div style="width:80%;height:3px;background-color: #df4a4a ; margin: auto;"></div>
+
+
+    <div class="pure-g">
+      <div class="pure-u-1-1">
+        <p style="font-size: 18px; font-family: Montserrat; font-weight: 500; text-align: center; padding-top: 25px; margin-bottom: -10px;">
+          Since 2020, there has been a total of 
+        </p>
+      </div>
+    </div>
+
+    <div class="pure-g">
+      <div class="pure-u-1-3">
+        <p style="font-size: 40px; font-family: Montserrat; font-weight: 500; text-align: center; color: cornflowerblue;">
+          7,540,223
+        </p>
+      </div>
+      <div class="pure-u-1-3">
+        <p style="font-size: 40px; font-family: Montserrat; font-weight: 500; text-align: center; color: #df4a4a;">
+          66,841
+        </p>
+      </div>
+      <div class="pure-u-1-3">
+        <p style="font-size: 40px; font-family: Montserrat; font-weight: 500; text-align: center; color: forestgreen;">
+          6,987,778
+        </p>
+      </div>
+    </div>
+
+
+
+    <div class="pure-g">
+      <div class="pure-u-1-3"; style="margin-bottom: 0px;">
+        <p style="font-size: 18px; font-family: Montserrat; font-weight: 700; text-align: center; margin-top: -20px;">
+          Total Confirmed Cases
+        </p>
+      </div>
+      <div class="pure-u-1-3">
+        <p style="font-size: 18px; font-family: Montserrat; font-weight: 700; text-align: center; margin-top: -20px;">
+          Total Deaths
+        </p>
+      </div>
+      <div class="pure-u-1-3">
+        <p style="font-size: 18px; font-family: Montserrat; font-weight: 700; text-align: center; margin-top: -20px;">
+          Total Recovered Cases
+        </p>
+      </div>
+    </div>
+
+    <div class="pure-g">
+      <div class="pure-u-1-1">
+        <p style="font-size: 18px; font-family: Montserrat; font-weight: 500; text-align: center; padding-top: 25px; margin-bottom: -10px;">
+          To illustrate this, here is a line chart detailing the total confirmed cases, total deaths and total recoveries over time 
+        </p>
+      </div>
+    </div>
 
     <div class="pure-g">
       <div class="pure-u-1-1">
@@ -55,7 +110,7 @@
   </div> <!-- end page -->
 
   <script type="text/javascript">
-    var specVis1 = "json/choropleth.json";
+    var specVis1 = "json/line_3.json";
     var specVis2 = "json/stacked_area.json";
 
     vegaEmbed('#vis1', specVis1, { "actions": false }).then(function (result) {
