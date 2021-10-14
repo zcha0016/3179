@@ -22,7 +22,7 @@
   }
   .vis-container{
     width: 100%;
-    align-self: center;
+    margin: auto;
   }
   #vg-tooltip-element{
     font-size: 14px;
