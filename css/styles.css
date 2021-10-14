@@ -7,7 +7,13 @@
   h1:first-line { 
     font-size: 50px;
     font-weight: 400; 
-  } 
+  }
+  p{
+    font-size: 18px;
+    font-family: 'Montserrat';
+    text-align: center;
+    font-weight: 500;
+  }
    body{
      background-color: #f5cbcb;
      font-family: 'Montserrat';
@@ -26,6 +32,7 @@
   .vis-container{
     width: 100%;
     margin: auto;
+    align-self: center;
   }
   #vg-tooltip-element{
     font-size: 14px;
