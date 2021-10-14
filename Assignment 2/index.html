@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Flight Statistics</title>
+  <!-- Import Vega & Vega-Lite (does not have to be from CDN) -->
+  <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
+
+  <!-- Import pure.css -->
+  <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/pure-min.css" integrity="sha384-cg6SkqEOCV1NbJoCu11+bm0NvBRc8IYLRGXkmNrqUBfTjmMYwNKPWBTIKyw9mHNJ" crossorigin="anonymous">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Google font -->
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;700;900&display=swap" rel="stylesheet">
+
+  <!-- CSS file -->
+  <link rel="stylesheet" type="text/css" href="css/styles.css" media="all">
+
+
+</head>
+<body>
+
+ <div class="page">
+
+    <!-- pure grid group -->
+    <div class="pure-g">
+      <div class="pure-u-1-1">
+        <h1 style="color: #BF3F3F; font-size: 40px;">Air Flight and it's Statistics</h1>
+        <h4>Ever wonder about the distribution and statistics of Air Traffic of the world <span style="color: red; font-size: 25px;">⁉️</span></h4>
+      </div>
+    </div>
+    <!-- end pure grid group -->
+
+    <!-- pure grid group -->
+    <div class="pure-g">
+        <div class="pure-u-1-1">
+          <div class="description description-left">
+            <h2 class="title">Global air traffic 📌</h2>
+            <div class="text-style">
+              <span>The number of flights performed globally by the airline industry </span>
+              <span style="color: #A1756A; font-size: 18px;"><b>increased steadily</b></span>
+              <span>since the </span>
+              <span style="color: #BF6A70; font-size: 18px;"><b>early 2000s </b></span>
+              <span>and reached </span>
+              <span style="color: #A1756A; font-size: 18px;"><b>38.9 million in 2019. </b></span>
+              <span>However, due to the coronavirus pandemic, the number of flights dropped to </span>
+              <span style="color: #A1756A; font-size: 18px;"><b>16.9 million in 2020. </b></span>
+            </div>
+            <p style="font-size: 12px;"><i>✨ Select the distance of each air flights to filter out the air routes. ✨</i></p>
+
+          </div>
+        </div>
+        <div class="pure-u-1-1">
+          <div id="vis1" class="vis-container"></div>
+        </div>
+    </div>
+    <!-- end pure grid group -->
+
+    <br>
+
+    <!-- pure grid group -->
+    <div class="pure-g">
+      <div class="pure-u-1-1">
+        <div class="description description-left">
+          <h2 class="title">Aviation Accidents 📌</h2>
+          <div class="text-style">
+            <span>The largest loss of life overall in a collective incident is the </span>
+            <span style="color: #6D8C65; font-size: 18px;"><b>2,996 fatalities</b></span>
+            <span> in the coordinated terrorist destruction of airplanes and occupied buildings in </span>
+            <span style="color: #D9A441; font-size: 18px;"><b> September 11 attacks </b></span>
+            <span>by hijacking </span>
+            <span style="color: #BF8339; font-size: 18px;"><b>4 airplanes </b></span>
+            <span>in the </span>
+            <span style="color: #BF8339; font-size: 18px;"> <b>United States of America. </b></span>
+          </div>
+          <p style="font-size: 12px; font-style: italic;">This visualization shows the <b>top 25 geographical regions</b> having the highest number of fatal civil airliner accidents from 1945 until now.</p>
+          <p style="font-size: 12px;"><i>✨ Click on the map or bar chart to filter out the country. ✨</i></p>
+        </div>
+      </div>
+      <div class="pure-u-1-1">
+        <div id="vis2" class="vis-container"></div>
+      </div>
+    </div>
+    <!-- end pure grid group -->
+
+    <br>
+
+    <!-- pure grid group -->
+    <div class="pure-g">
+      <div class="pure-u-1-2">
+        <div class="description description-left">
+          <h2 class="title">Type of Flight Accidents and Incidents 📌</h2>
+          <div class="text-style">
+            <!-- <span>Occurrences have been coded to allow for identification and sorting by group (accidents versus attacks)</span> -->
+            <p>💥COM ⮕ Commercial (accident/incident)</p>
+            <p>🛩️MIL ⮕ Military (accident/incident)</p>
+            
+            <p>💣INB ⮕ Internal attack involving a pre-planned bomb</p>
+            <p>🛫INH ⮕ Internal attack to commandeer aircraft (weapons)</p>
+  
+            <p>✈️EXG ⮕ External attack originating on the ground (missiles)</p>
+            <p>🛬EXS ⮕ External attack originating in the sky (other aircraft)</p>
+          </div>
+        </div>
+      </div>
+      <div class="pure-u-1-2">
+        <div id="vis3"></div>
+      </div>
+    </div>
+    <!-- end pure grid group -->
+
+    <br>
+
+    <!-- pure grid group -->
+    <div class="pure-g">
+      <div class="pure-u-1-1">
+        <div>
+          <h1 style="color: crimson; font-size: 25px;">Impact of COVID-19 on Air Traffics</h1>
+          <h2 class="title">World Air Passenger Traffic evolution, 1980-2020 📌</h2>
+        </div>
+      </div>
+      <div class="pure-u-1-2">
+        <h3 style="font-size: 25px; "><span style="color: red; font-size: 25px;">🡳</span> -49% to -50%</h3>
+        <p style="font-size: 15px;"><i>decline in world total passengers in <b>2021</b> vs. 2019</i></p>
+      </div>
+      <div class="pure-u-1-2">
+        <h3 style="font-size: 25px;"><span style="color: red; font-size: 25px;">🡳</span> -60%</h3>
+        <p style="font-size: 15px;"><i>decline in world total passengers in <b>2020</b> vs. 2019</i></p>
+      </div>
+      <div class="pure-u-1-1">
+        <div id="vis5"  class="vis-container"></div>
+      </div>
+    </div>
+    <!-- end pure grid group -->
+
+    <br>
+
+    <!-- pure grid group -->
+    <div class="pure-g">
+      <div class="pure-u-1-1">
+        <div class="description description-left">
+          <h2 class="title">Passenger traffic and revenues by region for 2020 📌</h2>
+          <div class="text-style">
+            <p><b>Air passenger traffic:</b> Overall <b style="color: #D93B48; font-size: 18px;">reduction</b> of air passengers ranging <b style=" color: #D9A441; font-size: 18px;">from 60% in 2020</b></p>
+            <p><b>Airports:</b> Estimated <b style=" color: #D93B48; font-size: 18px;">loss </b>of approximately over <b style=" color: #D9A441; font-size: 18px;">USD 124 billion</b> airport revenues in 2020</p>
+            <p><b>Airlines:</b> A <b style=" color: #D9A441; font-size: 18px;">65.9%</b> <b style=" color: #D93B48; font-size: 18px;"> decline</b> of revenue passenger kilometers in 2020</p>
+            <p><b>Tourism:</b> A <b style=" color: #D93B48; font-size: 18px;">decline</b> in international tourism receipts of <b style="color: #D9A441; font-size: 18px;">USD 1.3 trillion</b> in 2020</p>
+            <p style="font-style: italic;">Note** Above data are all compared to 2019</p>
+          </div>
+        </div>
+      </div>
+      <div class="pure-u-1-1">
+        <div id="vis6"  class="vis-container"></div>
+      </div>
+    </div>
+    <!-- end pure grid group -->
+
+    <br>
+
+    <!-- pure grid group -->
+    <div class="pure-g">
+      
+      <div class="pure-u-1-2">
+        <div class="description description-left">
+          <h2 class="title">Cargo Flights in 2020 📌</h2>
+          <div class="text-style">
+            <!-- <p>As of 18 May 2020, 100% of all world destinations have travel restrictions. About 185 (85%) destinations have completely or partially closed their borders, while 11 destinations (5%) have suspended completely or partially international flights.</p> -->
+            <p>In contrast to the fall in passenger traffic, cargo flights surged with the <b style="color: #4F6973; font-size: 18px;">increased cargo-only operations</b> using passenger aircraft.</p>
+            <p>This can be seen in the graph <b style="color: #4F6973; font-size: 18px;">since March 2020</b> and a <b style="color: #4F6973; font-size: 18px;">sudden increase in April 2020</b> with a year over year <b style="color: #F24444; font-size: 18px;">growth of 35%.</b></p>
+          </div>
+          
+        </div>
+      </div>
+      <div class="pure-u-1-2">
+        <div id="vis7"  class="vis-container"></div>
+      </div>
+    </div>
+    <!-- end pure grid group -->
+
+    <br>
+
+    <div class="pure-g">
+      <div class="pure-u-1-1 small-font">
+        <p>FIT3179 Data Visualization 2 </p>
+        <p>This visualisation is created by <a href="https://github.com/peijiunchong" target="_blank">Chong Pei Jiun</a>. The datasource can be found <a href="https://github.com/peijiunchong/Flights_Statistic" target="_blank">here</a>.</p>
+      </div>
+    </div>
+    
+  </div> <!-- end page -->
+      
+     <script type="text/javascript">
+        var specVis1 = "json/choropleth.json";
+        var specVis2= "json\choropleth.json";
+        var specVis3= "json/radar_type_attacks.vl.json";
+        var specVis4= "json/donut_type_deaths.vl.json";
+        var specVis5= "json/line.vl.json";
+        var specVis6= "json/covid_effect.vl.json";
+        var specVis7= "json/cargo.vl.json";
+      
+      
+        vegaEmbed('#vis1', specVis1, {"actions": false}).then(function(result) {
+          // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+        }).catch(console.error);
+      
+         vegaEmbed('#vis2', specVis2, {"actions": false}).then(function(result) {
+          // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+        }).catch(console.error);
+      
+        vegaEmbed('#vis3', specVis3, {"actions": false}).then(function(result) {
+          // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+        }).catch(console.error);
+      
+          vegaEmbed('#vis4', specVis4, {"actions": false}).then(function(result) {
+          // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+        }).catch(console.error);
+      
+        vegaEmbed('#vis5', specVis5, {"actions": false}).then(function(result) {
+          // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+        }).catch(console.error);
+
+        vegaEmbed('#vis6', specVis6, {"actions": false}).then(function(result) {
+          // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+        }).catch(console.error);
+
+        vegaEmbed('#vis7', specVis7, {"actions": false}).then(function(result) {
+          // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+        }).catch(console.error);
+      
+      </script>
+</body>
+</html>
