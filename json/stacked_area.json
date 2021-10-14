@@ -2,7 +2,7 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "width": 1000,
   "data": {
-    "url": "https://raw.githubusercontent.com/zcha0016/3179/main/Assignment%202/data/Covid19-Turkey.csv"
+    "url": "https://raw.githubusercontent.com/zcha0016/3179/main/data/Covid19-Turkey.csv"
   },
   "width": 500,
   "height": 300,

@@ -4,7 +4,7 @@
     "width": 800,
     "height": 800,
     "data": {
-      "url": "https://raw.githubusercontent.com/zcha0016/3179/main/Assignment%202/data/dataset_csv.csv"
+      "url": "https://raw.githubusercontent.com/zcha0016/3179/main/data/dataset_csv.csv"
     },
     "hconcat": [
       {

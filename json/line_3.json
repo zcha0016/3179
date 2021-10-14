@@ -2,7 +2,7 @@
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "width": 500,
     "data": {
-      "url": "https://raw.githubusercontent.com/zcha0016/3179/main/Assignment%202/data/Covid19-Turkey.csv"
+      "url": "https://raw.githubusercontent.com/zcha0016/3179/main/data/Covid19-Turkey.csv"
     },
     "height": 300,
     "transform": [{"fold": ["Total Cases", "Total Deaths", "Total Recovered"]}],
