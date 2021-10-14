@@ -1,13 +1,13 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "width": 800,
+  "width": "container",
   "data": {
     "url": "https://raw.githubusercontent.com/zcha0016/3179/main/data/Covid19-Turkey.csv"
   },
   "height": 300,
   "vconcat": [
     {
-      "width" : 800,
+      "width" : "container",
       "height" : 300,
       "mark": {
         "type": "area",
@@ -53,7 +53,7 @@
       }
     },
     {
-      "width" : 300,
+      "width" : "container",
       "height": 60,
       "layer": [
         {
