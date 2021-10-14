@@ -12,6 +12,9 @@
      background-color: #f5cbcb;
      font-family: 'Montserrat';
    }
+   div{
+     line-height: 1.5;
+   }
    .page{
      width: 900px;   
      height: max-content; 
