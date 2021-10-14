@@ -1,0 +1,39 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "A simple pie chart with labels.",
+  "width": 1200,
+  "height": 800,
+  "data": {
+    "url": "https://raw.githubusercontent.com/zcha0016/3179/main/data/dataset_csv.csv"
+  },
+  "encoding": {
+    "x": {
+      "field": "CITY",
+      "type": "nominal",
+      "axis": {"labelAngle": -45},
+      "title": "City"
+    }
+  },
+  "layer": [
+    {
+      "mark": {"type": "bar", "size": 13, "color": "#ff5000"},
+      "encoding": {
+        "y": {
+          "field": "_1DOSE",
+          "type": "quantitative",
+          "axis": {"title": null, "ticks": false}
+        }
+      }
+    },
+    {
+      "mark": {"type": "bar", "size": 13, "color": "#ffb500"},
+      "encoding": {
+        "y": {
+          "field": "_2DOSE",
+          "type": "quantitative",
+          "axis": {"title": null, "ticks": false}
+        }
+      }
+    }
+  ]
+}
