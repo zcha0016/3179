@@ -34,5 +34,6 @@
       {"field": "properties.name", "type": "nominal", "title": "City"},
       {"field": "_2DOSE", "type": "quantitative", "title" : "Complete Vaccinations"}
     ]
-  }
+  },
+  "config": {"view": {"stroke": ""}}
 }
