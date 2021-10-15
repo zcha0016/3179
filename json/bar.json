@@ -19,7 +19,7 @@
       "transform": [
         {"calculate": "datum._1DOSE/datum.POPULATION * 10000", "as": "1dose per 10000 population"}
       ],
-      "mark": {"type": "bar", "size": 10, "color": "#ff5000"},
+      "mark": {"type": "bar", "size": 9, "color": "#ff5000"},
       "encoding": {
         "y": {
           "field": "1dose per 10000 population",
@@ -32,7 +32,7 @@
       "transform": [
         {"calculate": "datum._2DOSE/datum.POPULATION * 10000", "as": "2dose per 10000 population"}
       ],
-      "mark": {"type": "bar", "size": 10, "color": "#ffb500"},
+      "mark": {"type": "bar", "size": 9, "color": "#ffb500"},
       "encoding": {
         "y": {
           "field": "2dose per 10000 population",
