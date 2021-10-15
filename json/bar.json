@@ -1,7 +1,7 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "description": "A simple pie chart with labels.",
-  "width": 800,
+  "width": 900,
   "height": 500,
   "data": {
     "url": "https://raw.githubusercontent.com/zcha0016/3179/main/data/dataset_csv.csv"
