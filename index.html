@@ -145,6 +145,16 @@
       </div>
     </div>
 
+    <div class="pure-g">
+      <div class="pure-u-1-2">
+        <div id="vis4" class="vis-container"></div>
+      </div>
+      <div class="pure-u-1-2">
+        <p style="font-size: 12px; color: grey; font-weight: 400;text-align: center;padding-bottom: 20px;">
+          Click and drag over the smaller graph to filter out the date and resize the larger graph 
+        </p>
+      </div>
+    </div>
 
 
   </div> <!-- end page -->
@@ -153,6 +163,7 @@
     var specVis1 = "json/line_3.json";
     var specVis2 = "json/stacked_area.json";
     var specVis3 = "json/choropleth.json";
+    var specVis4 = "json/pie.json";
 
     vegaEmbed('#vis1', specVis1, { "actions": false }).then(function (result) {
       // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
@@ -163,6 +174,10 @@
     }).catch(console.error);
 
     vegaEmbed('#vis3', specVis3, { "actions": false }).then(function (result) {
+      // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+    }).catch(console.error);
+
+    vegaEmbed('#vis4', specVis4, { "actions": false }).then(function (result) {
       // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
     }).catch(console.error);
 
