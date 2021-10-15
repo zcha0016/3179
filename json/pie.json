@@ -1,94 +1,97 @@
 {
-    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "description": "A simple pie chart with labels.",
-    "width": 800,
-    "height": 800,
-    "data": {
-      "url": "https://raw.githubusercontent.com/zcha0016/3179/main/data/dataset_csv.csv"
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "A simple pie chart with labels.",
+  "width": 800,
+  "height": 800,
+  "data": {
+    "url": "https://raw.githubusercontent.com/zcha0016/3179/main/data/dataset_csv.csv"
+  },
+  "height": 300,
+  "transform": [
+    {
+      "fold": [
+        {
+          "field": "_1DOSE",
+          "as": "First Dose"
+        },
+        {
+          "field": "_2DOSE",
+          "as": "Second Dose"
+        }
+      ]
+    }
+  ],
+  "layer": [
+    {
+      "mark": {
+        "type": "arc",
+        "innerRadius": 0,
+        "stroke": "#fff"
+      }
     },
-    "hconcat": [
-      {
-        "height": 300,
-        "transform": [
-          {
-            "fold": [
-              {"field": "_1DOSE", "as": "First Dose"},
-              {"field": "_2DOSE", "as": "Second Dose"}
-            ]
-          }
-        ],
-        "layer": [
-          {"mark": {"type": "arc", "innerRadius": 0, "stroke": "#fff"}},
-          {
-            "mark": {"type": "text", "radiusOffset": 30},
-            "encoding": {"text": {"field": "key", "type": "nominal"}}
-          }
-        ],
-        "encoding": {
-          "theta": {
-            "field": "value",
-            "type": "quantitative",
-            "stack": true,
-            "aggregate": "sum"
-          },
-          "radius": {
-            "field": "value",
-            "type": "quantitative",
-            "scale": {"type": "sqrt", "zero": true, "range": [20, 100]},
-            "aggregate": "sum"
-          },
-          "color": {
-            "field": "key",
-            "type": "nominal",
-            "legend": null,
-            "scale": {
-              "domain": ["First Dose", "Second Dose"],
-              "range": ["#ff5000", "#ffb500"]
-            }
-          },
-          "tooltip": [
-            {"field": "key", "type": "nominal", "title": "Status"},
-            {
-              "field": "value",
-              "type": "quantitative",
-              "aggregate": "sum",
-              "title": "Total Vaccinations"
-            }
-          ]
-        },
-        "view": {"stroke": null}
+    {
+      "mark": {
+        "type": "text",
+        "radiusOffset": 30
       },
-      {
-        "encoding": {
-          "x": {
-            "field": "CITY",
-            "type": "nominal",
-            "axis": {"labelAngle": -45},
-            "title": "City"
-          }
-        },
-        "layer": [
-          {
-            "mark": {"type": "bar", "size": 15, "color": "#ff5000"},
-            "encoding": {
-              "y": {
-                "field": "_1DOSE",
-                "type": "quantitative",
-                "axis": {"title": null, "ticks": false}
-              }
-            }
-          },
-          {
-            "mark": {"type": "bar", "size": 15, "color": "#ffb500"},
-            "encoding": {
-              "y": {
-                "field": "_2DOSE",
-                "type": "quantitative",
-                "axis": {"title": null, "ticks": false}
-              }
-            }
-          }
+      "encoding": {
+        "text": {
+          "field": "key",
+          "type": "nominal"
+        }
+      }
+    }
+  ],
+  "encoding": {
+    "theta": {
+      "field": "value",
+      "type": "quantitative",
+      "stack": true,
+      "aggregate": "sum"
+    },
+    "radius": {
+      "field": "value",
+      "type": "quantitative",
+      "scale": {
+        "type": "sqrt",
+        "zero": true,
+        "range": [
+          20,
+          100
+        ]
+      },
+      "aggregate": "sum"
+    },
+    "color": {
+      "field": "key",
+      "type": "nominal",
+      "legend": null,
+      "scale": {
+        "domain": [
+          "First Dose",
+          "Second Dose"
+        ],
+        "range": [
+          "#ff5000",
+          "#ffb500"
         ]
       }
+    },
+    "tooltip": [
+      {
+        "field": "key",
+        "type": "nominal",
+        "title": "Status"
+      },
+      {
+        "field": "value",
+        "type": "quantitative",
+        "aggregate": "sum",
+        "title": "Total Vaccinations"
+      }
     ]
+  },
+  "view": {
+    "stroke": null
   }
+}
