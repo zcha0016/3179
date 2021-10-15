@@ -19,14 +19,15 @@
         "fields": ["_2DOSE", "POPULATION"]
       }
     },
-    {"calculate": "datum._2DOSE/datum.POPULATION * 10000", "as": "Confirmed per 10000 population"}
+    {"calculate": "datum._2DOSE/datum.POPULATION * 10000", "as": "Count per 10000 population"}
   ],
   "projection": {"type": "equalEarth"},
   "mark": {"type": "geoshape"},
   
   "encoding": {
     "color": {
-      "field": "Confirmed per 10000 population",
+      "field": "Count per 10000 population",
+      "title": "Record",
       "type": "quantitative",
       "scale" : {
         "scheme" : "oranges"
