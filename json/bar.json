@@ -16,20 +16,26 @@
   },
   "layer": [
     {
+      "transform": [
+        {"calculate": "datum._1DOSE/datum.POPULATION * 10000", "as": "1dose per 10000 population"}
+      ],
       "mark": {"type": "bar", "size": 10, "color": "#ff5000"},
       "encoding": {
         "y": {
-          "field": "_1DOSE",
+          "field": "1dose per 10000 population",
           "type": "quantitative",
           "axis": {"title": null, "ticks": false}
         }
       }
     },
     {
+      "transform": [
+        {"calculate": "datum._2DOSE/datum.POPULATION * 10000", "as": "2dose per 10000 population"}
+      ],
       "mark": {"type": "bar", "size": 10, "color": "#ffb500"},
       "encoding": {
         "y": {
-          "field": "_2DOSE",
+          "field": "2dose per 10000 population",
           "type": "quantitative",
           "axis": {"title": null, "ticks": false}
         }
