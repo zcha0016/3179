@@ -16,7 +16,7 @@
   },
   "layer": [
     {
-      "mark": {"type": "bar", "size": 13, "color": "#ff5000"},
+      "mark": {"type": "bar", "size": 10, "color": "#ff5000"},
       "encoding": {
         "y": {
           "field": "_1DOSE",
@@ -26,7 +26,7 @@
       }
     },
     {
-      "mark": {"type": "bar", "size": 13, "color": "#ffb500"},
+      "mark": {"type": "bar", "size": 10, "color": "#ffb500"},
       "encoding": {
         "y": {
           "field": "_2DOSE",
