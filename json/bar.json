@@ -17,30 +17,50 @@
           "scale": {"domain": {"param": "brush"}}
         }
       },
+      "transform": [
+        {
+          "calculate": "datum._1DOSE/datum.POPULATION * 10000",
+          "as": "1dose per 10000 population"
+        },
+        {
+          "calculate": "datum._2DOSE/datum.POPULATION * 10000",
+          "as": "2dose per 10000 population"
+        }
+      ],
       "layer": [
         {
-          "transform": [
-            {
-              "calculate": "datum._1DOSE/datum.POPULATION * 10000",
-              "as": "1dose per 10000 population"
-            }
-          ],
           "mark": {"type": "bar", "size": 9, "color": "#ff5000"},
           "encoding": {
             "x": {
               "field": "1dose per 10000 population",
               "type": "quantitative",
               "axis": {"title": null, "ticks": false}
-            }
+            },
+            "tooltip": [
+              {
+                "field": "1dose per 10000 population",
+                "type": "quantitative",
+                "title": "1 Dose Per 10000 population"
+              },
+              {
+                "field": "_1DOSE",
+                "type": "quantitative",
+                "title": "Total 1 Dose"
+              },
+              {
+                "field": "2dose per 10000 population",
+                "type": "quantitative",
+                "title": "2 Dose Per 10000 population"
+              },
+              {
+                "field": "_2DOSE",
+                "type": "quantitative",
+                "title": "Total 2 Dose"
+              }
+            ]
           }
         },
         {
-          "transform": [
-            {
-              "calculate": "datum._2DOSE/datum.POPULATION * 10000",
-              "as": "2dose per 10000 population"
-            }
-          ],
           "mark": {"type": "bar", "size": 9, "color": "#ffb500"},
           "encoding": {
             "x": {
@@ -66,11 +86,15 @@
         {"name": "brush", "select": {"type": "interval", "encodings": ["y"]}}
       ],
       "encoding": {
-        "y": {"field": "CITY", "type": "nominal", "axis": {"labels": false, "title":"", "ticks": false}},
+        "y": {
+          "field": "CITY",
+          "type": "nominal",
+          "axis": {"labels": false, "title": "", "ticks": false}
+        },
         "x": {
           "field": "1dose per 10000 population",
           "type": "quantitative",
-          "axis": {"ticks": false, "grid": false, "title":""}
+          "axis": {"ticks": false, "grid": false, "title": ""}
         }
       }
     }
