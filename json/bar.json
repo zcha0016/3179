@@ -1,43 +1,76 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "description": "A simple pie chart with labels.",
-  "width": "container",
-  "height": 300,
   "data": {
     "url": "https://raw.githubusercontent.com/zcha0016/3179/main/data/dataset_csv.csv"
   },
-  "encoding": {
-    "x": {
-      "field": "CITY",
-      "type": "nominal",
-      "axis": {"labelAngle": -90},
-      "title": "City"
-    }
-  },
-  "layer": [
+  "hconcat": [
     {
-      "transform": [
-        {"calculate": "datum._1DOSE/datum.POPULATION * 10000", "as": "1dose per 10000 population"}
-      ],
-      "mark": {"type": "bar", "size": 9, "color": "#ff5000"},
+      "width": 870,
+      "height": 800,
       "encoding": {
         "y": {
-          "field": "1dose per 10000 population",
-          "type": "quantitative",
-          "axis": {"title": null, "ticks": false}
+          "field": "CITY",
+          "type": "nominal",
+          "axis": {"labelAngle": 0},
+          "title": "City",
+          "scale": {"domain": {"param": "brush"}}
         }
-      }
+      },
+      "layer": [
+        {
+          "transform": [
+            {
+              "calculate": "datum._1DOSE/datum.POPULATION * 10000",
+              "as": "1dose per 10000 population"
+            }
+          ],
+          "mark": {"type": "bar", "size": 9, "color": "#ff5000"},
+          "encoding": {
+            "x": {
+              "field": "1dose per 10000 population",
+              "type": "quantitative",
+              "axis": {"title": null, "ticks": false}
+            }
+          }
+        },
+        {
+          "transform": [
+            {
+              "calculate": "datum._2DOSE/datum.POPULATION * 10000",
+              "as": "2dose per 10000 population"
+            }
+          ],
+          "mark": {"type": "bar", "size": 9, "color": "#ffb500"},
+          "encoding": {
+            "x": {
+              "field": "2dose per 10000 population",
+              "type": "quantitative",
+              "axis": {"title": null, "ticks": false}
+            }
+          }
+        }
+      ]
     },
     {
       "transform": [
-        {"calculate": "datum._2DOSE/datum.POPULATION * 10000", "as": "2dose per 10000 population"}
+        {
+          "calculate": "datum._1DOSE/datum.POPULATION * 10000",
+          "as": "1dose per 10000 population"
+        }
       ],
-      "mark": {"type": "bar", "size": 9, "color": "#ffb500"},
+      "height": 800,
+      "width": 30,
+      "mark": {"type": "bar", "fill": "lightgray"},
+      "params": [
+        {"name": "brush", "select": {"type": "interval", "encodings": ["y"]}}
+      ],
       "encoding": {
-        "y": {
-          "field": "2dose per 10000 population",
+        "y": {"field": "CITY", "type": "nominal", "axis": {"labels": false, "title":"", "ticks": false}},
+        "x": {
+          "field": "1dose per 10000 population",
           "type": "quantitative",
-          "axis": {"title": null, "ticks": false}
+          "axis": {"tickCount": 3, "grid": false, "title":""}
         }
       }
     }
