@@ -10,7 +10,7 @@
     "x": {
       "field": "CITY",
       "type": "nominal",
-      "axis": {"labelAngle": -45},
+      "axis": {"labelAngle": -90},
       "title": "City"
     }
   },
