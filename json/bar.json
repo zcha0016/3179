@@ -70,7 +70,7 @@
         "x": {
           "field": "1dose per 10000 population",
           "type": "quantitative",
-          "axis": {"tickCount": 3, "grid": false, "title":""}
+          "axis": {"ticks": false, "grid": false, "title":""}
         }
       }
     }
