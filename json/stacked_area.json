@@ -7,13 +7,11 @@
   "height": 300,
   "vconcat": [
     {
-      "width" : 850,
-      "height" : 300,
+      "width": 850,
+      "height": 300,
       "mark": {
         "type": "area",
-        "line": {
-          "color": "#ff3800"
-        },
+        "line": {"color": "#ff3800"},
         "color": {
           "x1": 1,
           "y1": 1,
@@ -21,14 +19,8 @@
           "y2": 0,
           "gradient": "linear",
           "stops": [
-            {
-              "offset": 0,
-              "color": "white"
-            },
-            {
-              "offset": 1,
-              "color": "#ff6500"
-            }
+            {"offset": 0, "color": "white"},
+            {"offset": 1, "color": "#ff6500"}
           ]
         }
       },
@@ -36,69 +28,41 @@
         "x": {
           "field": "Date",
           "type": "temporal",
-          "scale": {
-            "domain": {
-              "selection": "brush",
-              "encoding": "x"
-            }
-          },
-          "axis": {
-            "title": ""
-          }
+          "scale": {"domain": {"selection": "brush", "encoding": "x"}},
+          "axis": {"title": ""}
         },
-        "y": {
-          "field": "Daily Cases",
-          "type": "quantitative"
-        }
+        "y": {"field": "Daily Cases", "type": "quantitative"},
+        "tooltip" : [
+          {"field" : "Daily Cases", "type" : "quantitative"},
+          {"field" : "Date", "type" : "temporal"}
+
+        ]
       }
     },
     {
-      "width" : 850,
+      "width": 850,
       "height": 60,
       "layer": [
         {
           "params": [
             {
               "name": "brush",
-              "select": {
-                "type": "interval",
-                "encodings": [
-                  "x"
-                ]
-              }
+              "select": {"type": "interval", "encodings": ["x"]}
             }
           ],
-          "mark": {
-            "type": "area",
-            "color": "#ff6500"
-          }
+          "mark": {"type": "area", "color": "#ff6500"}
         },
         {
-          "transform": [
-            {
-              "filter": {
-                "param": "brush"
-              }
-            }
-          ],
-          "mark": {
-            "type": "area",
-            "color": "#ff8700"
-          }
+          "transform": [{"filter": {"param": "brush"}}],
+          "mark": {"type": "area", "color": "#ff8700"}
         }
       ],
       "encoding": {
-        "x": {
-          "field": "Date",
-          "type": "temporal"
-        },
+        "x": {"field": "Date", "type": "temporal"},
         "y": {
           "field": "Daily Cases",
           "type": "quantitative",
-          "axis": {
-            "tickCount": 3,
-            "grid": false
-          }
+          "axis": {"tickCount": 3, "grid": false}
         }
       }
     }
