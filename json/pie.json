@@ -31,7 +31,8 @@
     {
       "mark": {
         "type": "text",
-        "radiusOffset": 30
+        "radiusOffset": 60,
+        "fontSize":18
       },
       "encoding": {
         "text": {
@@ -56,7 +57,7 @@
         "zero": true,
         "range": [
           20,
-          170
+          150
         ]
       },
       "aggregate": "sum"
