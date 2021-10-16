@@ -19,23 +19,27 @@
         "fields": ["_2DOSE", "POPULATION"]
       }
     },
-    {"calculate": "datum._2DOSE/datum.POPULATION * 10000", "as": "Count per 10000 population"}
+    {
+      "calculate": "datum._2DOSE/datum.POPULATION * 10000",
+      "as": "Count per 10000 population"
+    }
   ],
   "projection": {"type": "equalEarth"},
-  "mark": {"type": "geoshape"},
-  
+  "mark": {"type": "geoshape", "stroke": "black", "strokeWidth": 0.2},
   "encoding": {
     "color": {
       "field": "Count per 10000 population",
       "title": "Record",
       "type": "quantitative",
-      "scale" : {
-        "scheme" : "oranges"
-      }
-  },
- "tooltip": [
+      "scale": {"scheme": "oranges"}
+    },
+    "tooltip": [
       {"field": "properties.name", "type": "nominal", "title": "City"},
-      {"field": "_2DOSE", "type": "quantitative", "title" : "Complete Vaccinations"}
+      {
+        "field": "_2DOSE",
+        "type": "quantitative",
+        "title": "Complete Vaccinations"
+      }
     ]
   },
   "config": {"view": {"stroke": ""}}
