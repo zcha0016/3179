@@ -4,10 +4,6 @@
     font-size: 60px;
     font-weight: 900;
   }
-  h1:first-line { 
-    font-size: 50px;
-    font-weight: 400; 
-  }
   p{
     font-size: 18px;
     font-family: 'Montserrat';
@@ -33,7 +29,7 @@
     display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 70%;
+    width: 60%;
   }
   .vis-container{
     width: 100%;
