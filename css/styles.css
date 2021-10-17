@@ -29,6 +29,12 @@
      padding: 50px;
      padding-top: 35px;
   }
+  .center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%;
+  }
   .vis-container{
     width: 100%;
     margin: auto;
